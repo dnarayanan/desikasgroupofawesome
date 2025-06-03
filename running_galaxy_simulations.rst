@@ -369,9 +369,20 @@ example from one of Sidney's zooms::
 
 Compiling Arepo
 -----------------
-Arepo is similar to Gizmo with the following updates [as of December, 2024 on HiPerGator)::
+Arepo is similar to Gizmo with the following updates.  All notes are as of June 2025 on HiPerGator:
 
+First, HiPerGator2 [note, this only works for RedHat EL8, which will be deprecated as of August 2025]::
 
+  module purge
+  module load intel/2020.0.166
+  module load openmpi/4.1.6
+  module load python/3.11.4
+  module load fftw/3.3.10
+  module load hdf5/1.14.5
+  module load grackle/3.2.1
+  module load gsl/2.6
+
+Second, HiPerGator3 [RedHat EL8]::
   module purge
   module load ufrc
   module load intel/2020.0.166
@@ -382,6 +393,18 @@ Arepo is similar to Gizmo with the following updates [as of December, 2024 on Hi
   module load grackle/3.2.1
   module load gsl/2.6
 
+
+Finally, HiPerGator3 [RedHat EL9]::
+  module purge
+  module load ufrc
+  module load intel/2025.1.0
+  module load openmpi/5.0.7
+  module load hdf5/1.14.6
+  module load gsl/2.8
+  module load grackle/3.4.0
+  module load fftw/3.3.10
+  module load gsl
+  
   
 Like with Gizmo you'll need to look at someone else's Config.sh to
 compile to set the correct physics. This said there is one important
