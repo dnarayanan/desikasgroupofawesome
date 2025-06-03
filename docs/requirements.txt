@@ -1,5 +1,5 @@
 Sphinx
 sphinx-rtd-theme
 # Add any other Sphinx extensions or project dependencies here, e.g.:
-# myst-parser
+myst-parser
 # your-package-name
