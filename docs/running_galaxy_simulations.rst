@@ -383,6 +383,7 @@ First, HiPerGator2 [note, this only works for RedHat EL8, which will be deprecat
   module load gsl/2.6
 
 Second, HiPerGator3 [RedHat EL8]::
+
   module purge
   module load ufrc
   module load intel/2020.0.166
@@ -395,6 +396,7 @@ Second, HiPerGator3 [RedHat EL8]::
 
 
 Finally, HiPerGator3 [RedHat EL9]::
+
   module purge
   module load ufrc
   module load intel/2025.1.0
