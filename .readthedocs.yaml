@@ -35,3 +35,7 @@ sphinx:
 #    - requirements: docs/requirements.txt
 
 
+version: 2
+sphinx:
+  # Path to your Sphinx configuration file.
+  configuration: docs/conf.py
