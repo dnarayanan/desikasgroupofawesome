@@ -34,7 +34,7 @@ The development version of python-fsps now includes the Fortran FSPS source code
 fsps::
 
   >cd $HOME
-  >git clone https://github.con/cconroy20/fsps
+  >git clone https://github.com/cconroy20/fsps
   >cd fsps/src
 
 in the Makefile set F90=$(FC) and this will ensure that the compilers
