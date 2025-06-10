@@ -180,6 +180,7 @@ First, load up the compilers that we'll use throughout::
   >module load git
 
 basic packages::
+
   >conda install numpy scipy cython h5py matplotlib psutil joblib six astropy
   >pip install synphot extinction
   >conda install mpi4py
@@ -190,16 +191,16 @@ yt (version 4.4.0)::
   >pip install yt
 
 pygadgetreader (commit bea9c958592b6435d8fd907007e19a15be76486a)::
+
   >cd $HOME
   >git clone https://github.com/dnarayanan/pygadgetreader.git
   >cd pygadgetreader
   >python setup.py install
 
 caesar (commit c7139f6adc6f4ad10ee5d2827db8407c0445aa0d)::
+
   >cd $HOME
   >python setup.py install
-
-
 
 python fsps and fsps (version 0.4.7,commit 30c1fec374ffccb4556d32c9f1ddb73789b06ad9)::
 
@@ -232,15 +233,18 @@ hyperion (Desika fork, commit 434191330f5d4c7f9d2dd55b6420bb039f97c6f4)::
 
 Make sure that whatever directory you put for configure is in your $PATH. You can check whether this is true by typing $PATH in the command line and looking for the <location>/bin directory. The ufrc step is to prevent compiling the binaries in an environment to prevent unexpected behavior. Reactivate your environment at this point.
 
-hyperion dust::
+hyperion dust (commit 66b04df0d06bbd2338ad180bb0ed247cc8d1fe29)::
 
   >cd $HOME
-  >git clone https://github.com/hyperion-rt/hyperion-dust
-  >tar -xzvf hyperion-dust-0.1.0.tar.gz
-  >cd hyperion-dust-0.1.0
+  >git clone https://github.com/hyperion-rt/hyperion-dust.git
+  >cd hyperion-dust
   >python setup.py build_dust
+  >cd dust_files
+  >wget https://github.com/hyperion-rt/paper-galaxy-rt-model/blob/master/dust/big.hdf5
+  >wget https://github.com/hyperion-rt/paper-galaxy-rt-model/blob/master/dust/vsg.hdf5
+  >wget https://github.com/hyperion-rt/paper-galaxy-rt-model/blob/master/dust/usg.hdf5
   
-powderday::
+powderday (commit xxx) ::
 
   >git clone https://github.com/dnarayanan/powderday.git
   >cd powderday
