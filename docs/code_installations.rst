@@ -200,13 +200,17 @@ caesar (commit c7139f6adc6f4ad10ee5d2827db8407c0445aa0d)::
 
   >cd $HOME
   >git clone git clone https://github.com/dnarayanan/caesar.git
+  >cd caesar
   >python setup.py install
 
 python fsps and fsps (version 0.4.7,commit 30c1fec374ffccb4556d32c9f1ddb73789b06ad9)::
 
   >cd $HOME
   >git clone --recursive https://github.com/dfm/python-fsps.git
+  >cd python-fsps
+  >git submodule init
   >git submodule update
+  >cd $HOME
   >python -m pip install fsps
 
 python-fsps now comes pre-packaged with fsps, so we don't need to install them separately anymore. The --recursive option on the git clone pulls the appropriate version of fsps as well. Here I've installed it with pip because of issues in the past, but there is everything you need to do the manual installation in this download.
