@@ -167,10 +167,9 @@ powderday::
 Installations With Intel Compilers (updated for el9 installation by Dhruv as of 6/10/2025)
 -----------------
 
-[3] The first set of instructions for the University of Florida
-HiPerGator3.0 facility is to employ intel compilers, and to compile
-everything manually.  This allows the greatest flexibility, as well as
-the ability to use private forks of individual codes. This installation will list versions and commits where appropriate. This relies more on pip installs than previous attempts. The python version used for this installation is python 3.10.18. 
+[3] The set of instructions for the University of Florida
+HiPerGator3.0 facility to employ intel compilers, and to compile
+everything. This installation will list versions and commits where appropriate. This relies more on pip installs than previous attempts. The python version used for this installation is python 3.10.18. 
 
 First, load up the compilers that we'll use throughout::
 
@@ -179,7 +178,7 @@ First, load up the compilers that we'll use throughout::
   >module load hdf5/1.14.6
   >module load git
 
-basic packages::
+miscellaneous packages::
 
   >conda install numpy scipy cython h5py matplotlib psutil joblib six astropy
   >pip install synphot extinction
@@ -200,6 +199,7 @@ pygadgetreader (commit bea9c958592b6435d8fd907007e19a15be76486a)::
 caesar (commit c7139f6adc6f4ad10ee5d2827db8407c0445aa0d)::
 
   >cd $HOME
+  >git clone git clone https://github.com/dnarayanan/caesar.git
   >python setup.py install
 
 python fsps and fsps (version 0.4.7,commit 30c1fec374ffccb4556d32c9f1ddb73789b06ad9)::
@@ -209,14 +209,14 @@ python fsps and fsps (version 0.4.7,commit 30c1fec374ffccb4556d32c9f1ddb73789b06
   >git submodule update
   >python -m pip install fsps
 
-python-fsps now comes pre-packaged with fsps, so we don't need to install them separately anymore. The --recursive option on the git clone pulls the appropriate version of fsps as well. Here I've installed it with pip because of issues in the past, but there is everything you need to do the manual installation
+python-fsps now comes pre-packaged with fsps, so we don't need to install them separately anymore. The --recursive option on the git clone pulls the appropriate version of fsps as well. Here I've installed it with pip because of issues in the past, but there is everything you need to do the manual installation in this download.
 
 Set in your .bashrc the analog to::
 
   >export SPS_HOME=$HOME/python-fsps/src/fsps/libfsps
 
 
-hyperion (Desika fork, commit 434191330f5d4c7f9d2dd55b6420bb039f97c6f4)::
+hyperion (Desika's fork, commit 434191330f5d4c7f9d2dd55b6420bb039f97c6f4)::
 
   >cd $HOME
   >git clone https://github.com/dnarayanan/hyperion.git
@@ -244,7 +244,7 @@ hyperion dust (commit 66b04df0d06bbd2338ad180bb0ed247cc8d1fe29)::
   >wget https://github.com/hyperion-rt/paper-galaxy-rt-model/blob/master/dust/vsg.hdf5
   >wget https://github.com/hyperion-rt/paper-galaxy-rt-model/blob/master/dust/usg.hdf5
   
-powderday (commit xxx) ::
+powderday (commit 00e0fae87e2751ab7a9dcc5760368b818fb1647f) ::
 
   >git clone https://github.com/dnarayanan/powderday.git
   >cd powderday
@@ -260,7 +260,7 @@ Conda Installation
 -----------------
   
 [4] The final set of instructions use gcc, and the conda installation
-of `Hyperion <http://www.hyperion-rt.org>`_.  Thanks to Paul Torrey
+of `Hyperion <https://docs.hyperion-rt.org/en/stable/index.html>`_.  Thanks to Paul Torrey
 for these.::
 
   >module load openmpi/4.1.1 libz/1.2.11 hdf5/1.10.1 conda/4.12.0 git/2.30.1 gcc
