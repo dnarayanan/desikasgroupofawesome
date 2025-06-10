@@ -369,17 +369,44 @@ example from one of Sidney's zooms::
 
 Compiling Arepo
 -----------------
-Arepo is similar to Gizmo with the following updates::
+Arepo is similar to Gizmo with the following updates.  All notes are as of June 2025 on HiPerGator:
 
+First, HiPerGator2 [note, this only works for RedHat EL8, which will be deprecated as of August 2025]::
 
   module purge
-  module load intel/2018.1.163
-  module load openmpi/3.1.2
-  module load gsl/2.4
-  module load fftw/3.3.7
-  module list
+  module load intel/2020.0.166
+  module load openmpi/4.1.6
+  module load python/3.11.4
+  module load fftw/3.3.10
+  module load hdf5/1.14.5
+  module load grackle/3.2.1
+  module load gsl/2.6
+
+Second, HiPerGator3 [RedHat EL8]::
+
+  module purge
+  module load ufrc
+  module load intel/2020.0.166
+  module load openmpi/4.1.6
+  module load python/3.11.4
+  module load fftw/3.3.10
+  module load hdf5/1.14.1
+  module load grackle/3.2.1
+  module load gsl/2.6
 
 
+Finally, HiPerGator3 [RedHat EL9]::
+
+  module purge
+  module load ufrc
+  module load intel/2025.1.0
+  module load openmpi/5.0.7
+  module load hdf5/1.14.6
+  module load gsl/2.8
+  module load grackle/3.4.0
+  module load fftw/3.3.10
+  module load gsl
+  
   
 Like with Gizmo you'll need to look at someone else's Config.sh to
 compile to set the correct physics. This said there is one important
@@ -531,22 +558,21 @@ as well as the GitHub repo.  An example of this .sh file (for posterity) is::
   #SBATCH --partition=hpg-default
   #SBATCH --account=narayanan
   #SBATCH --qos=narayanan
-  
+
+
   module purge
-  #module load ddt/18.0.2
-  module load intel/2018
-  module load gsl
-  module load openmpi/3.1.2
-  module load hdf5
-  #module load grackle
-  
+  module load intel/2020.0.166
+  module load gsl/2.6
+  module load openmpi/4.1.6
+  module load hdf5/1.14.1
+
   DATADIR=$SLURM_SUBMIT_DIR
   
   export OMPI_MCA_pml="ucx"
   export OMPI_MCA_btl="^vader,tcp,openib"
   export OMPI_MCA_oob_tcp_listen_mode="listen_thread"
   
-  srun --mpi=pmix_v2     ./arepo_addbg/Arepo   arepo_addbg/param_MW_ultra_lowres.txt 0        1> output_makeIC/OUTPUT  2> output_makeIC/ERROR
+  srun     ./arepo_addbg/Arepo   arepo_addbg/param_MW_ultra_lowres.txt 0        1> output_makeIC/OUTPUT  2> output_makeIC/ERROR
 
 
 

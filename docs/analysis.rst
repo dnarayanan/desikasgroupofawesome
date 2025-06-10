@@ -52,6 +52,8 @@ To calculate the attenuation curve for a galaxy, we need to generate an SED with
   from hyperion.model import Model
   import astropy.units as u
   from tqdm.auto import tqdm
+  import numpy as np
+  from matplotlib import pyplot as plt
 
   #test on a high-z Cosmic Sands galaxy
   m_out = ModelOutput('/orange/narayanan/s.lower/simba/m25n256_dm/zooms/pd_runs/run9_halo0/snap24/run9_snap024.rtout.sed')
