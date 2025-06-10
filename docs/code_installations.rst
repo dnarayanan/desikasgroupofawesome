@@ -199,7 +199,7 @@ pygadgetreader (commit bea9c958592b6435d8fd907007e19a15be76486a)::
 caesar (commit c7139f6adc6f4ad10ee5d2827db8407c0445aa0d)::
 
   >cd $HOME
-  >git clone git clone https://github.com/dnarayanan/caesar.git
+  >git clone https://github.com/dnarayanan/caesar.git
   >cd caesar
   >python setup.py install
 
