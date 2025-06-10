@@ -180,7 +180,7 @@ First, load up the compilers that we'll use throughout::
 
 miscellaneous packages::
 
-  >conda install numpy scipy cython h5py matplotlib psutil joblib six astropy
+  >conda install numpy scipy cython h5py matplotlib psutil joblib six astropy scikit-learn ipython
   >pip install synphot extinction
   >conda install mpi4py
 
