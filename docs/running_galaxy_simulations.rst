@@ -561,10 +561,14 @@ as well as the GitHub repo.  An example of this .sh file (for posterity) is::
 
 
   module purge
-  module load intel/2020.0.166
-  module load gsl/2.6
-  module load openmpi/4.1.6
-  module load hdf5/1.14.1
+  module load ufrc
+  module load intel/2025.1.0
+  module load openmpi/5.0.7
+  module load hdf5/1.14.6
+  module load gsl/2.8
+  module load grackle/3.4.0
+  module load fftw/3.3.10
+  module load gsl
 
   DATADIR=$SLURM_SUBMIT_DIR
   
