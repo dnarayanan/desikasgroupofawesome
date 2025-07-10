@@ -220,7 +220,8 @@ Set in your .bashrc the analog to::
   >export SPS_HOME=$HOME/python-fsps/src/fsps/libfsps
 
 
-hyperion (Desika's fork, commit 434191330f5d4c7f9d2dd55b6420bb039f97c6f4)::
+hyperion (Desika's fork, commit 434191330f5d4c7f9d2dd55b6420bb039f97c6f4)
+NOTE - you'll need to change line 2090 of configure in hyperion from 'elif test "$mpi_compiler" == ifort'to 'elif test "$mpi_compiler" == ifx' for the configure step to be successful on EL9::
 
   >cd $HOME
   >git clone https://github.com/dnarayanan/hyperion.git
