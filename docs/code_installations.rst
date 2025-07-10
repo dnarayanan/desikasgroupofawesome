@@ -222,7 +222,7 @@ Set in your .bashrc the analog to::
 
 hyperion (Desika's fork, commit 434191330f5d4c7f9d2dd55b6420bb039f97c6f4)
 
-NOTE - if get an error trying to run the configure step on EL9 that looks like ``configure: error: Could not determine MPI compiler: ifx``, you likely need to change line 2090 of configure in hyperion from ``elif test "$mpi_compiler" == ifort`` to ``elif test "$mpi_compiler" == ifx`` for the configure step to be successful on EL9::
+NOTE - if you get an error trying to run the configure step on EL9 that looks like ``configure: error: Could not determine MPI compiler: ifx``, you likely need to change line 2090 of configure in hyperion from ``elif test "$mpi_compiler" == ifort`` to ``elif test "$mpi_compiler" == ifx`` for the configure to be successful::
 
   >cd $HOME
   >git clone https://github.com/dnarayanan/hyperion.git
