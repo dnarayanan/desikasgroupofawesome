@@ -21,23 +21,24 @@ we'll note them.
 
 
 For MUSIC, you'll
-need a few libraries (compiler, GSL and FFTW loaded at the least).  I
-suggest having your flags and paths set in the compiler as something
-like::
+need a few libraries (compiler, GSL and FFTW loaded at the least).  The following is a known working setup as of July 2025, for Red Hat EL9 on HiPerGator or music git hash 6747c54f3b73ec36719c265fd96362849a83cb45)::
 
   ##############################################################################
   ### compiler and path settings
-  CC      = icc
+  CC      = g++
+  #CC     =cc
   OPT     = -Wall -Wno-unknown-pragmas -O3 -g -mtune=native
   CFLAGS  =
-  LFLAGS  = -lgsl -lgslcblas #-ldrfftw_threads
+  LFLAGS  = -lgsl -lgslcblas -lm #-ldrfftw_threads
   CPATHS  = -I./src -I$(HOME)/local/include -I/opt/local/include -I/usr/local/include -I$(HPC_FFTW_INC) -I$(HPC_GSL_INC)
   LPATHS  = -L$(HOME)/local/lib -L/opt/local/lib -L/usr/local/lib -L$(HPC_FFTW_LIB) -L$(HPC_GSL_LIB)
+  
+So that the code automagically looks for whatever is added to your path when you module load the libraries.  In principle, you can just load modules before compiling like::
 
-So that the code automagically looks for whatever is added to your path when you module load the libraries.  In principle, you can just load modules before compiling like (as of 10/12/23, this is known to work for RHEL8 for music git hash 6747c54f3b73ec36719c265fd96362849a83cb45)::
+  module load intel/2025.1.0  openmpi/5.0.7  hdf5/1.14.1 fftw/3.3.10  gsl/2.8
 
-
-
+Its useful to note that while the following modules below are deprecated (RH EL8), they were used at some points in the past.  I'm leaving these here for posterity so that in case one runs into trouble with the above, there's a history of some other modules that may be useful::
+  
   module load intel/2020.0.166  openmpi/4.1.5  hdf5/1.14.1 git/2.30.1  cmake/3.26.4 fftw/3.3.10  gsl/2.7 libz/1.2.11
 
 **GIZMO:** The next thing you'll need is a configuration file for MUSIC.  Let's
@@ -134,8 +135,8 @@ Once this config file is set, we need to actually run MUSIC on the config file t
   #SBATCH --qos=narayanan-b
   
   module purge
+  module load intel/2025.1.0  openmpi/5.0.7  hdf5/1.14.1 fftw/3.3.10  gsl/2.8
 
-  module load intel/2020.0.166  openmpi/4.1.5  hdf5/1.14.1 git/2.30.1  cmake/3.26.4 fftw/3.3.10  gsl/2.7 libz/1.2.11
   ./MUSIC ics_m25n512.conf
 
 and the resultant file (which we set in the .conf file to be ics_m25n512) is the HDF5 initial condition for the simulation!
