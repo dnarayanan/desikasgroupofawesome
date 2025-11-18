@@ -1,0 +1,152 @@
+InitCondFile                                      /blue/narayanan/desika.narayanan/arepo_runs/cosmic_sands/m100/ICs_and_masks/ICs/m100n256/z0/ics_run0_halo10407.ml12
+OutputDir                                         ./output/
+SnapshotFileBase                                  snapshot
+OutputListFilename                                /home/desika.narayanan/gizmo_arepo_stuff/timings_files/arepo_quarter_redshifts.txt
+ICFormat                                          3
+SnapFormat                                        3
+TimeLimitCPU                                      343800
+CpuTimeBetRestartFile                             9000
+ResubmitOn                                        0
+ResubmitCommand                                   my-scriptfile
+MaxMemSize                                        2400
+TimeBegin                                         0.01
+TimeMax                                           1
+ComovingIntegrationOn                             1
+PeriodicBoundariesOn                              1
+CoolingOn                                         1
+StarformationOn                                   1
+Omega0                                            0.3
+OmegaLambda                                       0.7
+OmegaBaryon                                       0.048
+HubbleParam                                       0.7
+BoxSize                                           100000.0
+OutputListOn                                      1
+TimeBetSnapshot                                   0.005
+TimeOfFirstSnapshot                               0
+TimeBetStatistics                                 0.2
+NumFilesPerSnapshot                               4
+NumFilesWrittenInParallel                         1
+TypeOfTimestepCriterion                           0
+ErrTolIntAccuracy                                 0.0125
+CourantFac                                        0.3
+MaxSizeTimestep                                   0.005
+MinSizeTimestep                                   0
+CritOverDensity                                   200
+SfrEfficiency                           0.01000000
+InitGasTemp                                       138.09
+MinGasTemp                                        5
+LimitUBelowThisDensity                            0
+LimitUBelowCertainDensityToThisValue              0
+MinEgySpec                                        0
+TypeOfOpeningCriterion                            1
+ErrTolTheta                                       0.35
+ErrTolForceAcc                                    0.0025
+MultipleDomains                                   8
+TopNodeFactor                                     5
+DesNumNgb                                         64
+MaxNumNgbDeviation                                1
+UnitLength_in_cm                                  3.08568e+21    # IN KPC NOW
+UnitMass_in_g                                     1.989e+43
+UnitVelocity_in_cm_per_s                          100000
+GravityConstantInternal                           0
+GasSoftFactor                                     2.8
+
+
+DustMinimumComovingHsml                           0.001171875
+SofteningComovingType0                            0.6
+SofteningComovingType1                            0.6
+SofteningComovingType2                            4.8
+SofteningComovingType3                            0.6
+SofteningComovingType4                            0.6
+SofteningComovingType5                            0.6
+SofteningMaxPhysType0                             0.3
+SofteningMaxPhysType1                             0.3
+SofteningMaxPhysType2                             2.4
+SofteningMaxPhysType3                             0.3
+SofteningMaxPhysType4                             0.3
+SofteningMaxPhysType5                             0.3
+
+SofteningTypeOfPartType0                          0
+SofteningTypeOfPartType1                          1
+SofteningTypeOfPartType2                          2
+SofteningTypeOfPartType3                          3
+SofteningTypeOfPartType4                          4
+SofteningTypeOfPartType5                          5
+
+MinimumComovingHydroSoftening                     0.3 #1.5e-2
+AdaptiveHydroSofteningSpacing                     1.2
+
+
+ActivePartFracForNewDomainDecomp                  0.05
+
+
+CellShapingSpeed                                  0.5
+CellMaxAngleFactor                                2.25
+TargetGasMassFactor                               1
+RefinementCriterion                               1
+DerefinementCriterion                             1
+TreecoolFile                                      /blue/narayanan/pg3552/arepo-dust-disk/dust_tables/TREECOOL_fg_dec11
+DensThreshold                           469.71837489
+FeedbackEfficiency                                1.0
+FeedbackRadiusLimiterFactor                       400.0 		% corresponds to 300 pc  1.5     0.2
+ThermalFeedbackEfficiency               21.79586882
+FeedbackWeightingType				  5
+FeedbackWeightingPow1                             -1.5
+FeedbackWeightingPow2                             -0.75
+
+DustOpacityRadiationFeedback                          53.87636
+InputTimeHeatRadiationFeedback                        0.02884
+InputTimeMomRadiationFeedback           0.00327672
+LumToMassRatioRadiationFeedback         4862.89720445
+
+RadiationFeedbackAvgPhotonEnergyineV              17
+PhotoionizationGasTemp                            17000
+IMF_MinMass_Msun                                  0.1
+IMF_MaxMass_Msun                                  100
+AGB_MassTransferOn                                1
+SNIa_MassTransferOn                               1
+SNII_MassTransferOn                               1
+OB_MassTransferOn 				                  1
+SNII_MinMass_Msun                                 6
+SNII_MaxMass_Msun                                 100
+SNIa_Rate_TAU                                     0.04
+SNIa_Rate_Norm                                    0.0013
+YieldTablePath                                    /blue/narayanan/pg3552/arepo-dust-disk/dust_tables/Yields
+DesNumNgbEnrichment                               32
+MaxNumNgbDeviationEnrichment                      5
+CoolingTablePath                                  /blue/narayanan/pg3552/arepo-dust-disk/dust_tables/cooling_metal_UVB_self_shielding_Rahmati12.hdf5
+MinMetalTemp                                      10
+ReferenceGasPartMass                              0.0
+MinimumDensityOnStartUp                           1.e-10
+SelfShieldingFile                                 /blue/narayanan/pg3552/arepo-dust-disk/dust_tables/SelfShielding_Rahmati12 %_high_z_mod
+
+DesLinkNgb                                        20
+ErrTolThetaSubfind                                0.7
+
+
+GasMetallicityInSolar                             0.0
+
+DesNumNgbDust            64
+MaxNumNgbDeviationDust   16
+MinGrainSize             0.0004
+MaxGrainSize             1.0
+GrainDensity0             3.3
+GrainDensity1             2.2
+MaxBinFracMassChg        0.1
+GrainDataPath            ./GrainData_extrap.hdf5
+DustTargetFrac           1.25e-2
+DustMaxFrac              1.25 %1.25e-1
+DustMinFrac              1.25e-3
+NumDustPerSpawn          1
+DustSubcycleFac          1000000000.0 %40960.0
+DustKickVel              1.0e6
+DustTrackID              470105
+DLSputteringMultiplier          1.
+DLGrowthMultiplier              1.
+DLShatteringMultiplier          1.
+DLCoagulationMultiplier         1.
+DLClumpingFac                           1.38175271
+DLClumpingFdens                 1
+
+WindSpeedFactor 1.0
+%PhotometricsTablePath                             /home/desika.narayanan/gizmo_arepo_stuff/Arepo_GFM_Tables/Photometrics
