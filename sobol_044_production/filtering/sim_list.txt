@@ -1,0 +1,2 @@
+/blue/narayanan/desika.narayanan/arepo_runs/cosmic_sands/m100/z0/sobol_044_production/automation_test/output
+/blue/narayanan/desika.narayanan/arepo_runs/cosmic_sands/m100/z0/sobol_044_production/gal10407_sobol_044_v2/output/
